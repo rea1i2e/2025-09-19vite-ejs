@@ -1,0 +1,15 @@
+{
+  "name": "2025-09-19vite-ejs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.6",
+    "vite-plugin-ejs": "^1.7.0"
+  }
+}
