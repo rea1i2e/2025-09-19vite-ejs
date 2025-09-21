@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { imagetools } from 'vite-imagetools';
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { resolve } from "node:path";
 import { globSync } from "glob";
@@ -33,5 +34,6 @@ export default defineConfig({
     }),
     liveReload(["**/*.ejs"]),
     sassGlobImports(),
+    imagetools(),
   ],
 });
