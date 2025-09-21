@@ -1,0 +1,7 @@
+@use "../global" as *;
+
+.c-button {
+  display: inline-block;
+  padding: rem(30) rem(60);
+  background-color: pink;
+}

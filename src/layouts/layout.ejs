@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-<%- include('../components/_head') %>
+<%- include('../components/_head', { title: title }) %>
 
 <body>
-  <%- include('../components/_header') %>
+  <%- include('../components/_header', { title: title }) %>
   <main>
     <%- include('./main/_' + content) %>
   </main>

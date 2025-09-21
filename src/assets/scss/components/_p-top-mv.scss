@@ -1,0 +1,23 @@
+@use "../global" as *;
+
+.p-top-mv {
+}
+
+.l-top-mv {
+}
+
+.p-top-mv__inner {
+}
+
+.p-top-mv__heading {
+}
+
+.p-top-mv__content {
+}
+
+.p-top-mv__button {
+  margin-top: rem(80);
+  @include mq() {
+    margin-top: rem(120);
+  }
+}
