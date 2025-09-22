@@ -1,0 +1,40 @@
+<%
+/**
+ * 属性と属性値を設置にしたオブジェクトを受け取り、未定義のものを除外して文字列に変換する関数
+ */
+function attrs(obj) {
+  return Object.entries(obj) // オブジェクトを配列に変換
+    .filter(([_, v]) => v !== undefined) // _とvという名前で取り出し、vがundefinedでないものを抽出
+    .map(([k, v]) => `${k}="${v}"`) // kとvという名前で取り出し、k="v"という形式に変換（属性="属性値"）
+    .join(" "); // 配列を結合して文字列に変換（属性1="属性値1" 属性2="属性値2" ...）
+}
+%>
+<%#
+課題
+・image/jpg → image/jpeg に変更する
+・source属性にwidthとheightは無効か検証する
+・attrs()を別ファイルに切り出して、c-button.ejsなどでも使い回す
+└ vite-plugin-ejsのオプションに関数を渡すと全ページから参照可能になるらしい
+%>
+
+<picture>
+  <% if (typeof spWidth !== 'undefined') { %>
+    <source srcset="<%= path + file %>_sp.webp" media="(max-width: 767px)" type="image/webp" <%- attrs({ width: spWidth, height: spHeight }) %> >
+    <source srcset="<%= path + file %>_sp.<%= type %>" media="(max-width: 767px)" type="image/<%= type %>" <%- attrs({ width: spWidth, height: spHeight }) %> >
+  <% } %>
+  <source srcset="<%= path + file %>.webp" type="image/webp" <%- attrs({ width, height }) %> >
+  <img src="<%= path + file %>.<%= type %>" <%- attrs({ alt, width, height, loading }) %> >
+</picture>
+
+<%# 使い方
+include('../functions/_picture', { 
+  path: '/assets/images/dummy/', 
+  file: 'dummy', 
+  type: 'jpg', 
+  spWidth: 480, 
+  spHeight: 320, 
+  width: 1200, 
+  height: 800, 
+  alt: 'dummy', 
+  loading: 'lazy'
+}) %>
