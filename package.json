@@ -13,9 +13,10 @@
     "autoprefixer": "^10.4.21",
     "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.93.0",
+    "unplugin-imagemin": "^0.6.9",
     "vite": "^6.3.6",
-    "vite-imagetools": "^8.0.0",
     "vite-plugin-ejs": "^1.7.0",
+    "vite-plugin-html-images": "^0.1.2",
     "vite-plugin-live-reload": "^3.0.5",
     "vite-plugin-sass-glob-import": "^5.0.0"
   },
