@@ -74,7 +74,8 @@ export default defineConfig({
     ViteEjsPlugin({
       siteName: "ViteEJS検証2025-09-19",
     }),
-    liveReload(["src/**/*.ejs"]),
+    liveReload(["**/*.ejs"]),
+    // liveReload(["src/**/*.ejs"]), // パスが通らない
     sassGlobImports(),
   ],
 });
